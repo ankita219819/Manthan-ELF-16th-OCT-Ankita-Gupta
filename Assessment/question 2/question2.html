@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Editer</title>
+
+    <style>
+        body {
+            background-color: peachpuff;
+        }
+
+        textarea {
+            width: 300px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-left: 300px; float: left;">
+        <h3>Write the html Code here</h3>
+        <textarea id="textareaid" style="height: 500px;">
+
+        </textarea>
+    </div>
+
+    <div style="margin-left: 350px; float: left;">
+        <h3>Output</h3>
+        <iframe id="iframeid" style="height: 500px;">
+        </iframe>
+    </div>
+    <br>
+    <button style="margin-top: 1%; margin-left: 10%;" type="reset" onclick="run()">Run</button>
+    <p id="demo"></p>
+    <script src="quest.js"></script>
+</body>
+
+</html>

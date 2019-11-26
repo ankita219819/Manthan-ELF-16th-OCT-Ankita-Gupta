@@ -15,7 +15,7 @@ import manthan.assessment.Implementation.DaoImpl;
 import manthan.assessment.bean.Bean;
 
 @WebServlet("/loginM")
-public class LoginMe extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	static int count;
 
 	public LoginMe() {

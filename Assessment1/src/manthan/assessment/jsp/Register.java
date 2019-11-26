@@ -13,7 +13,7 @@ import manthan.assessment.Implementation.DaoImpl;
 import manthan.assessment.bean.Bean;
 
 @WebServlet("/add")
-public class AddMe extends HttpServlet{
+public class Register extends HttpServlet{
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		

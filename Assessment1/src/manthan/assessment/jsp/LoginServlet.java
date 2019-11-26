@@ -23,12 +23,12 @@ public class LoginServlet extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		int uid=Integer.parseInt(req.getParameter("uid"));
+		int user_id=Integer.parseInt(req.getParameter("uid"));
 		String password=req.getParameter("password");
 		
 
 		Dao dao=new DaoImpl();
-		Bean b=dao.logIn(uid, password);
+		Bean b=dao.logIn(user_id, password);
 
 		if(count>=3) {
 			

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                        <h3 class="text-center">Weight Converter</h3>
+                        
+                        <div>
+                        <table class="table">
+                        
+                                <tr>
+                                    <!-- this is a row of selecting unit in which input will be given, default is Kilogram -->
+                                    <td><input type="number" id="fromWeight" value="0" onkeyup="convertWeight()"></td>
+                                    <td>
+                                        <select name="unit" id="fromW" onchange="convertWeight()">
+                                            <option value = "g" >Gram</option>
+                                            <option value = "kg" selected>Kilogram</option>
+                                            <option value = "ounce">Ounce</option>
+                                            <option value = "lb">Pound</option>
+                                            <option value = "t">U.S. Ton</option>
+                                            <option value="mg">Miligrams</option>
+                                        </select>
+                                    </td>	
+                                </tr>
+                                <tr>
+                                    <!-- this is a row of selecting unit in which output will be given, default is gram -->
+                                    <td><input type="text" id="toWeight"  disabled></td>
+                                    <td>
+                                        <select name="" id="toW" onchange="convertWeight()">
+                                            <option  value="g" selected >Gram</option>
+                                            <option  value="kg" >Kilogram</option>
+                                            <option  value="ounce">Ounce</option>
+                                            <option  value="lb">Pound</option>
+                                            <option  value="t">U.S. Ton</option>
+                                            <option value="mg">Miligrams</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="Convert" onClick="convertWeight()" width=150></td>
+                                </tr>
+                        </table>
+                        </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+
+        <script>
+        
+        jsResult={
+     g : 1000,
+     kg : 1,
+     ounce : 35.274,
+     lb : 2.20462,
+     t : 0.00110231,
+     mg: 0.0000001
+};
+//converting weight into different untit 
+//default units are given as kilograms---->grams
+function convertWeight(){
+    var from =document.getElementById("fromW").value;
+    var to=document.getElementById("toW").value;
+    //this will ake he option as jsResult[g]/jsResult[kg], equate the value and multiply with the input we have given 
+    var oneUnit=jsResult[to]/jsResult[from]
+    var amt = document.getElementById("fromWeight").value;
+    document.getElementById("toWeight").value= (oneUnit*amt).toFixed(6); 
+}
+        </script>
+</body>
+</html>
